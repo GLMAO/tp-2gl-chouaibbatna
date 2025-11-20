@@ -1,11 +1,15 @@
 package com.polytech.tp;
 
-public abstract class CoursDecorator implements ICours {
-    protected ICours coursDecorated;
 
-    public CoursDecorator(ICours cours) {
-        this.coursDecorated = cours;
+public abstract class CoursDecorator implements ICours {
+    protected ICours coursDecore;
+
+    public CoursDecorator(ICours coursDecore) {
+        this.coursDecore = coursDecore;
     }
-    
-    // TODO: Forcer l'implémentation des méthodes de ICours
+    // TODO: Forcer l'implementation des méthodes de ICours
+    @Override
+    public String getDescription() {
+        return coursDecore.getDescription();
+    }
 }
